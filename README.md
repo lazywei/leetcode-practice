@@ -5,7 +5,7 @@ This is my playground for practicing leetcode problems in Python.
 
 ## Usage
 
-The `./get` executable is a handy Python script for grasp the LeetCode initial code for a specified problem.
+The `./get` executable is a handy Python script for downloading the LeetCode initial code for a specified problem.
 
 Requirements for the `./get` script are
 - Python 3
@@ -21,5 +21,5 @@ Usage:
 ./get https://leetcode.com/problems/sum-root-to-leaf-numbers/
 ```
 
-The downloaded script will be saved in the `./code/` directory.
+The downloaded script will be saved in the `./code/` directory, and the file will be properly named --- in the format [ProbNo-ProbName]. For example, `173-BinarySearchTreeIterator.py`.
 
