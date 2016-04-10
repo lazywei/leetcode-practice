@@ -15,16 +15,41 @@ def buildTree(arr):
 
         if i+1 >= len(arr):
             break
-        left = TreeNode(arr[i+1])
-        node.left = left
-        queue.append(left)
+        if arr[i+1] is not None:
+            left = TreeNode(arr[i+1])
+            node.left = left
+            queue.append(left)
 
         if i+2 >= len(arr):
             break
-        right = TreeNode(arr[i+2])
-        node.right = right
-        queue.append(right)
+        if arr[i+2] is not None:
+            right = TreeNode(arr[i+2])
+            node.right = right
+            queue.append(right)
 
         i += 2
 
     return root
+
+def getTrees():
+    root = TreeNode(0)
+    root.left = TreeNode(1)
+    root.left.left = TreeNode(2)
+    root.right = TreeNode(3)
+    root.right.right = TreeNode(4)
+    root.left.left.right = TreeNode(5)
+    root.left.left.left = TreeNode(6)
+    root.left.left.left.left = TreeNode(7)
+
+    return [root, root.left.left, root.right, root.left.right,
+            TreeNode(0),
+            buildTree(range(3)), buildTree(range(4)), buildTree(range(113))]
+
+def treeHeight(root):
+    if root is None:
+        return 0
+
+    leftDepth = treeHeight(root.left)
+    rightDepth = treeHeight(root.right)
+
+    return max(leftDepth, rightDepth) + 1
